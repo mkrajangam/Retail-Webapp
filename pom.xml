@@ -71,7 +71,7 @@
 					<path>/retailone</path>
 					<contextReloadable>true</contextReloadable>
 				</configuration>
-				<executions>
+				<!-- <executions>
 					<execution>
 						<id>start-tomcat</id>
 						<phase>pre-integration-test</phase>
@@ -89,7 +89,7 @@
 							<goal>shutdown</goal>
 						</goals>
 					</execution>
-				</executions>
+				</executions> -->
 			</plugin>
 
 			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
