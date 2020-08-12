@@ -20,7 +20,7 @@ pipeline {
         }
         stage("deploy-dev") {
             steps {
-				sshagent(['tomcat-new']) { 
+				sshagent(['deploy-dev']) { 
 				sh """
 					ssh -o StrictHostKeyChecking=no target/retailone.war devops@192.168.5.129:/opt/tomcat/webapps/
 					ssh devops@192.168.5.129 /opt/tomcat/bin/shutdown.sh
