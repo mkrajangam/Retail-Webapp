@@ -17,7 +17,18 @@ pipeline {
                 sh "mvn clean package"
             }
         }
-        
+        stage("deploy-dev") {
+            steps {
+				sshagent(['tomcat-new']) { 
+				sh """
+					ssh -o StrictHostKeyChecking=no target/retailone.war devops@192.168.5.129:/opt/tomcat/webapps/
+					ssh devops@192.168.5.129 /opt/tomcat/bin/shutdown.sh
+					ssh devops@192.168.5.129 /opt/tomcat/bin/startup.sh
+				"""
+				}
+                
+            }
+        } 
     }
 	post {
         always {
