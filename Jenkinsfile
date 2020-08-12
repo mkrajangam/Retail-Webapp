@@ -22,7 +22,7 @@ pipeline {
             steps {
 				sshagent(['deploy-dev']) { 
 				sh """
-					scp -o StrictHostKeyChecking=no target/retailone.war devops@192.168.5.129:/tmp
+					scp -o StrictHostKeyChecking=no target/retailone.war devops@192.168.5.129:/home/devops/
 					//scp -o StrictHostKeyChecking=no target/retailone.war devops@192.168.5.129:/opt/tomcat/webapps/
 					//ssh devops@192.168.5.129 /opt/tomcat/bin/shutdown.sh
 					//ssh devops@192.168.5.129 /opt/tomcat/bin/startup.sh
