@@ -3,7 +3,7 @@ pipeline {
 	
 	environment {
 		PATH = "/usr/share/maven/bin:$PATH"
-
+	}
     stages {
         stage("Git Checkout") {
             steps {
